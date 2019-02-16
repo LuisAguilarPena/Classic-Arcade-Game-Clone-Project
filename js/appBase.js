@@ -1,9 +1,11 @@
 // Enemies our player must avoid
-var Enemy = function(posX, posY, movSpeed) { // Variables applied to each of our instances go here,
-    this.posX = posX; // Where the enemy will spawn in the x axis
-    this.posY = posY; // Where the enemy will spawn in the y axis
-    this.movSpeed = movSpeed; // enemies' movement speed
-    this.sprite = 'images/enemy-bug.png'; // The image/sprite for our enemies, this uses a helper we've provided to easily load images
+var Enemy = function() {
+    // Variables applied to each of our instances go here,
+    // we've provided one for you to get started
+
+    // The image/sprite for our enemies, this uses
+    // a helper we've provided to easily load images
+    this.sprite = 'images/enemy-bug.png';
 };
 
 // Update the enemy's position, required method for game
@@ -12,7 +14,6 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.posX += this.movSpeed * dt; //It makes the 
 };
 
 // Draw the enemy on the screen, required method for game
