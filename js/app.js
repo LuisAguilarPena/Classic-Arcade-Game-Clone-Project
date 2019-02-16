@@ -33,15 +33,26 @@ var Player = function(x, y, speed) {
 
 Player.prototype.update = function(dt) {
     //this.x += this.speed * dt;
-}
+};
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 Player.prototype.handleInput = function(keyPress) {
-
-}
+    if (keyPress == 'left') {
+        player.x -= player.speed;
+    }
+    if (keyPress == 'up') {
+        player.y -= player.speed - 20;
+    }
+    if (keyPress == 'right') {
+        player.x += player.speed;
+    }
+    if (keyPress == 'down') {
+        player.y += player.speed - 20;
+    }
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
