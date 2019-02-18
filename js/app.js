@@ -18,6 +18,7 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += this.speed * dt; //It adds to the initial position of the enemy
+    checkCollision(this); // Check for the collision
 };
 
 // Draw the enemy on the screen, required method for game
@@ -37,7 +38,6 @@ var Player = function(x, y, speed) {
 };
 
 Player.prototype.update = function(dt) {
-    //this.x += this.speed * dt;
 };
 
 Player.prototype.render = function() {
@@ -59,12 +59,22 @@ Player.prototype.handleInput = function(keyPress) {
     }
 };
 
+var checkCollision = function(anEnemy) {
+  var phrases = ['Can you explain it to me?',"Baby face Pancho",'FETUS!!!!']
+  // check for collision between enemy and player
+  if (player.y + 131 >= anEnemy.y + 90 && player.x + 25 <= anEnemy.x + 88 && player.y + 73 <= anEnemy.y + 135 && player.x + 76 >= anEnemy.x + 11) {
+    console.log(phrases[Math.floor(Math.random() * Math.floor(3))]); // choose a phrase
+    player.x = 202.5;
+    player.y = 383;
+  }
+};
+
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
 var allEnemies = [];
-var player = new Player(0,325, 100);
+var player = new Player(202.5,380, 100);
 var enemy = new Enemy(0, 50, 100);
 
 allEnemies.push(enemy);
