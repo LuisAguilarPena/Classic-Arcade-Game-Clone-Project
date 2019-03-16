@@ -25,7 +25,7 @@ class Player {
 		this.x = x;
 		this.y = y;
 		this.speed = speed;
-		this.sprite = 'images/char-boy.png';
+		this.sprite = 'images/char-horn-girl.png';
 	}
 
 	update(dt) {}
