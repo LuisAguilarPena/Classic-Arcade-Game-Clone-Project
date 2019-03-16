@@ -40,13 +40,13 @@ class Player {
 			player.x -= player.speed;
 		}
 		if (keyPress == 'up') {
-			player.y -= player.speed - 8;
+			player.y -= player.speed * 1.7;
 		}
 		if (keyPress == 'right') {
 			player.x += player.speed;
 		}
 		if (keyPress == 'down') {
-			player.y += player.speed - 8;
+			player.y += player.speed * 1.7;
 		}
 		console.log('keyPress is: ' + keyPress);
 	}
