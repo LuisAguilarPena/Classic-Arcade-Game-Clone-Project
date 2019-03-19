@@ -27,7 +27,7 @@ This repository is the starter code for _all_ Udacity students. Therefore, we mo
 
 ## Project Specification
 
-- [ ] The game functions correctly and runs error free.
+- [x] The game functions correctly and runs error free.
 
 - [x] Player can not move off screen
 
@@ -43,7 +43,7 @@ This repository is the starter code for _all_ Udacity students. Therefore, we mo
 
 - [x] A README file is included detailing all steps required to successfully run the application.
 
-- [ ] Comments are present and effectively explain longer code procedures. As a rule of thumb: describe what all custom functions and object methods do.
+- [x] Comments are present and effectively explain longer code procedures. As a rule of thumb: describe what all custom functions and object methods do.
 
 - [x] Code is formatted with consistent, logical, and easy-to-read formatting.
 
