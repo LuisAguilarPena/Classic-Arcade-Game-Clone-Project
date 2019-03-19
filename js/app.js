@@ -1,3 +1,4 @@
+// Enemy class, all other enemies will inherit from this class
 class Enemy {
 	constructor(x, y, speed) {
 		this.x = x;
@@ -5,16 +6,17 @@ class Enemy {
 		this.speed = speed;
 		this.sprite = 'images/original-sprites/enemy.png';
 	}
+	// for smooth movement, see engine.js
 	update(dt) {
 		this.x += this.speed * dt;
-
+		// resets enemy position once it reaches edge of screen
 		if (this.x >= 505) {
 			this.x = 0;
 		}
-
+		// collision with player, this refers to an enemy
 		checkCollision(this);
 	}
-
+	// in order to render
 	render() {
 		ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 	}
@@ -27,10 +29,11 @@ class Player {
 		this.speed = speed;
 		this.sprite = 'images/original-sprites/player-sprite-1.png';
 	}
-
+	// game breaks without it
 	update(dt) {}
 
 	render() {
+		// render to canvas context (ctx)
 		ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 		displayScoreLevel(score, gameLevel);
 	}
@@ -68,8 +71,8 @@ class Player {
 		console.log('keyPress is: ' + keyPress);
 	}
 }
-
-var displayScoreLevel = function(aScore, aLevel) {
+// to render score and level at the bottom of the html with a new div
+const displayScoreLevel = (aScore, aLevel) => {
 	var canvas = document.getElementsByTagName('canvas');
 
 	var firstCanvasTag = canvas[0];
@@ -79,7 +82,7 @@ var displayScoreLevel = function(aScore, aLevel) {
 	document.body.insertBefore(scoreLevelDiv, firstCanvasTag[0]);
 };
 
-var checkCollision = function(anEnemy) {
+const checkCollision = (anEnemy) => {
 	if (
 		player.y + 131 >= anEnemy.y + 90 &&
 		player.x + 25 <= anEnemy.x + 88 &&
@@ -90,7 +93,7 @@ var checkCollision = function(anEnemy) {
 		player.x = 202.5;
 		player.y = 383;
 	}
-
+	// Behaviour of app when player reaches top
 	if (player.y + 63 <= 0) {
 		player.x = 202.5;
 		player.y = 383;
@@ -104,7 +107,7 @@ var checkCollision = function(anEnemy) {
 		console.log('current score: ' + score + ', current level: ' + gameLevel);
 		increaseDifficulty(score);
 	}
-
+	// Player can not go outside of canvas
 	if (player.y > 383) {
 		player.y = 383;
 	}
@@ -116,26 +119,27 @@ var checkCollision = function(anEnemy) {
 	}
 };
 
-var increaseDifficulty = function(numEnemies) {
+const increaseDifficulty = (numEnemies) => {
 	allEnemies.length = 0;
 
-	for (var i = 0; i <= numEnemies; i++) {
+	for (let i = 0; i <= numEnemies; i++) {
 		var enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
 
 		allEnemies.push(enemy);
 	}
 };
-
+// Create the new instances and objects require to start game:
 var allEnemies = [];
-var player = new Player(201.25, 383, 50); // x -> 0, 201.25, 402.5 y ->
+var player = new Player(201.25, 383, 50); // in the middle
 var score = 0;
 var gameLevel = 1;
-var scoreLevelDiv = document.createElement('div');
+var scoreLevelDiv = document.createElement('div'); // create div for displaying score and level
 var enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
 
 allEnemies.push(enemy);
-
-document.addEventListener('keydown', function(e) {
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+// https://developer.mozilla.org/en-US/docs/Web/Events
+document.addEventListener('keydown', (e) => {
 	var allowedKeys = {
 		37: 'left',
 		38: 'up',
