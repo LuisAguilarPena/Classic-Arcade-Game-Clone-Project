@@ -3,7 +3,7 @@ class Enemy {
 		this.x = x;
 		this.y = y;
 		this.speed = speed;
-		this.sprite = 'images/enemy-bug.png';
+		this.sprite = 'images/original-sprites/enemy.png';
 	}
 	update(dt) {
 		this.x += this.speed * dt;
@@ -25,7 +25,7 @@ class Player {
 		this.x = x;
 		this.y = y;
 		this.speed = speed;
-		this.sprite = 'images/char-horn-girl.png';
+		this.sprite = 'images/original-sprites/player-sprite-1.png';
 	}
 
 	update(dt) {}
@@ -57,7 +57,13 @@ class Player {
 			console.log('y=', this.y);
 		}
 		if (keyPress == '1') {
-			player.sprite = 'images/char-boy.png';
+			player.sprite = 'images/original-sprites/player-sprite-1.png';
+		}
+		if (keyPress == '2') {
+			player.sprite = 'images/original-sprites/player-sprite-2.png';
+		}
+		if (keyPress == '3') {
+			player.sprite = 'images/original-sprites/player-sprite-3.png';
 		}
 		console.log('keyPress is: ' + keyPress);
 	}
@@ -135,7 +141,9 @@ document.addEventListener('keydown', function(e) {
 		38: 'up',
 		39: 'right',
 		40: 'down',
-		49: '1'
+		49: '1',
+		50: '2',
+		51: '3'
 	};
 
 	player.handleInput(allowedKeys[e.keyCode]);
