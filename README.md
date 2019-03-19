@@ -29,23 +29,23 @@ This repository is the starter code for _all_ Udacity students. Therefore, we mo
 
 - [ ] The game functions correctly and runs error free.
 
-- [ ] Player can not move off screen
+- [x] Player can not move off screen
 
-- [ ] Vehicles cross the screen
+- [x] Vehicles cross the screen
 
-- [ ] Vehicle-player collisions happen logically (not too early or too late)
+- [x] Vehicle-player collisions happen logically (not too early or too late)
 
-- [ ] Vehicle-player collision resets the game
+- [x] Vehicle-player collision resets the game
 
-- [ ] Something happens when player wins
+- [x] Something happens when player wins
 
-- [ ] Game objects (player and vehicles) are implemented using JavaScript object-oriented programming features. ES6 instantiation pattern was used.
+- [x] Game objects (player and vehicles) are implemented using JavaScript object-oriented programming features. ES6 instantiation pattern was used.
 
-- [ ] A README file is included detailing all steps required to successfully run the application.
+- [x] A README file is included detailing all steps required to successfully run the application.
 
 - [ ] Comments are present and effectively explain longer code procedures. As a rule of thumb: describe what all custom functions and object methods do.
 
-- [ ] Code is formatted with consistent, logical, and easy-to-read formatting.
+- [x] Code is formatted with consistent, logical, and easy-to-read formatting.
 
 ## How to Run
 
