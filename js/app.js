@@ -56,6 +56,9 @@ class Player {
 			console.log('x=', this.x);
 			console.log('y=', this.y);
 		}
+		if (keyPress == '1') {
+			player.sprite = 'images/char-boy.png';
+		}
 		console.log('keyPress is: ' + keyPress);
 	}
 }
@@ -131,7 +134,8 @@ document.addEventListener('keydown', function(e) {
 		37: 'left',
 		38: 'up',
 		39: 'right',
-		40: 'down'
+		40: 'down',
+		49: '1'
 	};
 
 	player.handleInput(allowedKeys[e.keyCode]);
