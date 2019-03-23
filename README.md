@@ -75,4 +75,4 @@ Key bindings:
 
 ## Notes
 
-All graphics used and most of the code are products of my own design.
+All graphics used and most of the code are products of my own design (not yet).
